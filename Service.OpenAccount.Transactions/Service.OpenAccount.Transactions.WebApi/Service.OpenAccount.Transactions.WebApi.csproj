@@ -1,0 +1,21 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service.OpenAccount.Transactions.Core.Abstractions\Service.OpenAccount.Transactions.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Transactions.Core\Service.OpenAccount.Transactions.Core.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Transactions.Data\Service.OpenAccount.Transactions.Data.csproj" />
+  </ItemGroup>
+
+
+</Project>
