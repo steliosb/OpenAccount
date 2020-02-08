@@ -33,19 +33,21 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Account
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Service.OpenAccount.Customers", "Service.OpenAccount.Customers", "{32EAEBFA-16EB-4A29-8161-6036895C5F48}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.WebApi", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.WebApi\Service.OpenAccount.Customers.WebApi.csproj", "{393B5C42-1D13-4307-A630-6C9C497A9A21}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.WebApi", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.WebApi\Service.OpenAccount.Customers.WebApi.csproj", "{393B5C42-1D13-4307-A630-6C9C497A9A21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Core", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Core\Service.OpenAccount.Customers.Core.csproj", "{3A545A72-133B-4145-9991-9D1820D06ED7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Core", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Core\Service.OpenAccount.Customers.Core.csproj", "{3A545A72-133B-4145-9991-9D1820D06ED7}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Core.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Core.Abstractions\Service.OpenAccount.Customers.Core.Abstractions.csproj", "{97D95369-2D03-4D41-9FFA-8DDDDC7CE4CA}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Core.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Core.Abstractions\Service.OpenAccount.Customers.Core.Abstractions.csproj", "{97D95369-2D03-4D41-9FFA-8DDDDC7CE4CA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Data", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Data\Service.OpenAccount.Customers.Data.csproj", "{9D5077B5-CA78-493D-ACEF-A0EC17A66BF9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Data", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Data\Service.OpenAccount.Customers.Data.csproj", "{9D5077B5-CA78-493D-ACEF-A0EC17A66BF9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Data.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Data.Abstractions\Service.OpenAccount.Customers.Data.Abstractions.csproj", "{132AFD91-2D52-44F0-B998-E95F50705AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Data.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Data.Abstractions\Service.OpenAccount.Customers.Data.Abstractions.csproj", "{132AFD91-2D52-44F0-B998-E95F50705AE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Integration", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Integration\Service.OpenAccount.Customers.Integration.csproj", "{91C6EF81-D1B7-4A2A-B118-4D5CA2A9AA12}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Integration", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Integration\Service.OpenAccount.Customers.Integration.csproj", "{91C6EF81-D1B7-4A2A-B118-4D5CA2A9AA12}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Integration.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Integration.Abstractions\Service.OpenAccount.Customers.Integration.Abstractions.csproj", "{8560A400-9668-42A3-BE77-92C53529A4C9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Integration.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Integration.Abstractions\Service.OpenAccount.Customers.Integration.Abstractions.csproj", "{8560A400-9668-42A3-BE77-92C53529A4C9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Tests", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Tests\Service.OpenAccount.Customers.Tests.csproj", "{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -129,6 +131,10 @@ Global
 		{8560A400-9668-42A3-BE77-92C53529A4C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8560A400-9668-42A3-BE77-92C53529A4C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8560A400-9668-42A3-BE77-92C53529A4C9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -153,6 +159,7 @@ Global
 		{132AFD91-2D52-44F0-B998-E95F50705AE6} = {32EAEBFA-16EB-4A29-8161-6036895C5F48}
 		{91C6EF81-D1B7-4A2A-B118-4D5CA2A9AA12} = {32EAEBFA-16EB-4A29-8161-6036895C5F48}
 		{8560A400-9668-42A3-BE77-92C53529A4C9} = {32EAEBFA-16EB-4A29-8161-6036895C5F48}
+		{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB} = {32EAEBFA-16EB-4A29-8161-6036895C5F48}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {4CEAFD74-BC3A-4426-A9C5-96E1A70B0933}
