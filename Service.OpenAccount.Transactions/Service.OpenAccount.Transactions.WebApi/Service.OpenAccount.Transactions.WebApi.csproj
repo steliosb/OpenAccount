@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Core.Abstractions\Service.OpenAccount.Transactions.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Core\Service.OpenAccount.Transactions.Core.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Transactions.Data.Abstarctions\Service.OpenAccount.Transactions.Data.Abstarctions.csproj" />
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Data\Service.OpenAccount.Transactions.Data.csproj" />
   </ItemGroup>
 
