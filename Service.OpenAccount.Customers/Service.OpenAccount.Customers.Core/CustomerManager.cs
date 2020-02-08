@@ -43,6 +43,9 @@ namespace Service.OpenAccount.Customers.Core
 			try
 			{
 				var customerDto = await _customerRepository.GetById(customerId).ConfigureAwait(false);
+
+				if (customerDto == null) return null;
+				
 				var customerDetail = _mapper.Map<CustomerDetail>(customerDto);
 
 				var accountDetailsIntegration = await _accountClient.GetByCustomerId(customerId).ConfigureAwait(false);

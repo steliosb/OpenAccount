@@ -15,7 +15,7 @@ namespace Service.OpenAccount.Customers.Tests
 	public class CustomerManagerTest
 	{
 		[Fact]
-		public async Task TestGetDetail()
+		public async Task TestGetDetail_Success()
 		{
 			//Arrange
 			int customerId = 10;
@@ -58,6 +58,25 @@ namespace Service.OpenAccount.Customers.Tests
 			Assert.Equal(accountId, result.Accounts.First().Id);
 			Assert.Equal(transactionId, result.Accounts.First().Transactions.First().Id);
 
+		}
+
+		[Fact]
+		public async Task TestGetDetail_IntegrationException()
+		{
+			//Arrange
+			int customerId = 10;
+
+			Mock<ICustomerRepository> customerRepository = new Mock<ICustomerRepository>(MockBehavior.Strict);
+			customerRepository.Setup(f => f.GetById(It.IsAny<int>())).Returns(Task.FromResult(new Customer() { Id = customerId, Name = "firstname", Surname = "lastname" }));
+
+			Mock<IAccountServiceClient> accountClient = new Mock<IAccountServiceClient>(MockBehavior.Strict);
+			accountClient.Setup(f => f.GetByCustomerId(It.IsAny<int>())).Throws(new Exception("Test exception"));
+
+			CustomerManager customerManager = new CustomerManager(customerRepository.Object, accountClient.Object);
+
+			//Act
+			//Assert
+			await Assert.ThrowsAsync<Exception>(async () => await customerManager.GetDetail(customerId).ConfigureAwait(false)).ConfigureAwait(false);
 		}
 	}
 }
