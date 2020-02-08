@@ -9,7 +9,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Service.OpenAccount.Accounts.Integration.Abstractions\Service.OpenAccount.Accounts.Integration.Abstractions.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Customers.Integration.Abstractions\Service.OpenAccount.Customers.Integration.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

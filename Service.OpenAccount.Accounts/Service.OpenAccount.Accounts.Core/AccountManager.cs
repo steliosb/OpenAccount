@@ -14,11 +14,13 @@ namespace Service.OpenAccount.Accounts.Core
 	{
 		private readonly IAccountRepository _accountRepository;
 		private readonly ITransactionServiceClient _transactionClient;
+		private readonly ICustomerServiceClient _customerClient;
 		private readonly IMapper _mapper;
-		public AccountManager(IAccountRepository accountRepository, ITransactionServiceClient transactionClient)
+		public AccountManager(IAccountRepository accountRepository, ITransactionServiceClient transactionClient, ICustomerServiceClient customerClient)
 		{
 			_accountRepository = accountRepository;
 			_transactionClient = transactionClient;
+			_customerClient = customerClient;
 			_mapper = new MappingConfiguration().GetConfigureMapper();
 
 		}
@@ -26,6 +28,10 @@ namespace Service.OpenAccount.Accounts.Core
 		{
 			try
 			{
+				var customer = await _customerClient.GetById(account.CustomerId).ConfigureAwait(false);
+
+				if (customer == null) throw new Exception("Customer not found");
+
 				var accountDto = _mapper.Map<Data.Abstrsactions.Dto.Account>(account);
 				await _accountRepository.Create(accountDto).ConfigureAwait(false);
 				_mapper.Map(accountDto, account);

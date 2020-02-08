@@ -1,12 +1,13 @@
 ﻿using AutoMapper;
-using Service.OpenAccount.Accounts.Core.Abstractions.Models;
+using Service.OpenAccount.Customers.Core.Abstractions.Models;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
-namespace Service.OpenAccount.Accounts.Core
+namespace Service.OpenAccount.Customers.Core
 {
-    public class MappingConfiguration
+    class MappingConfiguration
     {
         public MappingConfiguration() { }
 
@@ -28,12 +29,15 @@ namespace Service.OpenAccount.Accounts.Core
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Data.Abstrsactions.Dto.Account, Account>();
-                cfg.CreateMap<Data.Abstrsactions.Dto.Account, AccountDetail>().ForMember(dest => dest.Transactions, src => src.Ignore());
-                cfg.CreateMap<Account, Data.Abstrsactions.Dto.Account>();
+                cfg.CreateMap<Data.Abstractions.Models.Customer, Customer>();
+                cfg.CreateMap<Data.Abstractions.Models.Customer, CustomerDetail>()
+                    .ForMember(dest => dest.Accounts, src => src.Ignore())
+                    .ForMember(dest => dest.Balance, src => src.Ignore());
+                cfg.CreateMap<Customer, Data.Abstractions.Models.Customer>();
 
                 cfg.CreateMap<Integration.Abstractions.Models.Transaction, Transaction>();
-                cfg.CreateMap<Transaction, Integration.Abstractions.Models.Transaction>();
+                cfg.CreateMap<Integration.Abstractions.Models.AccountDetail, AccountDetail>()
+                    .ForMember(dest=>dest.Transactions, mp=>mp.MapFrom(src=>src.Transactions.Select(t=>_mapper.Map<Integration.Abstractions.Models.Transaction>(t)).ToList()));
             });
 
             config.AssertConfigurationIsValid();
