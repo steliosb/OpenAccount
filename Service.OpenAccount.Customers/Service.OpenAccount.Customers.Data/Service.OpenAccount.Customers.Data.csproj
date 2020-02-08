@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Service.OpenAccount.Accounts.Data.Abstrsactions\Service.OpenAccount.Accounts.Data.Abstrsactions.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Customers.Data.Abstractions\Service.OpenAccount.Customers.Data.Abstractions.csproj" />
   </ItemGroup>
 
 </Project>

@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="9.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Service.OpenAccount.Customers.Core.Abstractions\Service.OpenAccount.Customers.Core.Abstractions.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Customers.Data.Abstractions\Service.OpenAccount.Customers.Data.Abstractions.csproj" />
+    <ProjectReference Include="..\Service.OpenAccount.Customers.Integration.Abstractions\Service.OpenAccount.Customers.Integration.Abstractions.csproj" />
+  </ItemGroup>
+
+</Project>

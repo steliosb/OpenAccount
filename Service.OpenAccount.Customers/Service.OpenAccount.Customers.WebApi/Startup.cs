@@ -10,14 +10,14 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
-using Service.OpenAccount.Accounts.Core;
-using Service.OpenAccount.Accounts.Core.Abstractions;
-using Service.OpenAccount.Accounts.Data;
-using Service.OpenAccount.Accounts.Data.Abstrsactions;
-using Service.OpenAccount.Accounts.Integration;
-using Service.OpenAccount.Accounts.Integration.Abstractions;
+using Service.OpenAccount.Customers.Core;
+using Service.OpenAccount.Customers.Core.Abstractions;
+using Service.OpenAccount.Customers.Data;
+using Service.OpenAccount.Customers.Data.Abstractions;
+using Service.OpenAccount.Customers.Integration;
+using Service.OpenAccount.Customers.Integration.Abstractions;
 
-namespace Service.OpenAccount.Accounts.WebApi
+namespace Service.OpenAccount.Customers.WebApi
 {
 	public class Startup
 	{
@@ -31,19 +31,13 @@ namespace Service.OpenAccount.Accounts.WebApi
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			services.AddTransient<IAccountManager, AccountManager>();
-			services.AddTransient<IAccountRepository, AccountRepository>();
-			services.AddTransient<ITransactionServiceClient, TransactionServiceClient>();
-			services.AddSingleton<ITransactionServiceClientConfig>(new TransactionServiceClientConfig()
+			services.AddTransient<ICustomerManager, CustomerManager>();
+			services.AddTransient<ICustomerRepository, CustomerRepository>();
+			services.AddTransient<IAccountServiceClient, AccountServiceClient>();
+			services.AddSingleton<IAccountServiceClientConfig>(new AccountServiceClientConfig()
 			{
-				Endpoint = Configuration["TransactionClient:EndPoint"]
+				EndPoint = Configuration["AccountClient:EndPoint"]
 			});
-			services.AddTransient<ICustomerServiceClient, CustomerServiceClient>();
-			services.AddSingleton<ICustomerServiceClientConfig>(new CustomerServiceClientConfig()
-			{
-				Endpoint = Configuration["CustomerClient:EndPoint"]
-			});
-
 			services.AddControllers();
 		}
 
