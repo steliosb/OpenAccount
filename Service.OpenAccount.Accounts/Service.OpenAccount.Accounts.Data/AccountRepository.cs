@@ -9,17 +9,20 @@ namespace Service.OpenAccount.Accounts.Data
 {
 	public class AccountRepository : IAccountRepository
 	{
-		public static List<Account> _accounts = new List<Account>();
+		public static List<AccountDto> _accounts = new List<AccountDto>();
 
-		public async Task Create(Account account)
+		public async Task Create(AccountDto account)
 		{
-			account.Id = _accounts.Count() + 1;
-			_accounts.Add(account);
+			await Task.Run(() => _accounts.Add(new AccountDto()
+			{
+				Id = _accounts.Count() + 1,
+				CustomerId = account.CustomerId
+			})).ConfigureAwait(false);
 		}
 
-		public async Task<IEnumerable<Account>> GetByCustomerId(int customerId)
+		public async Task<IEnumerable<AccountDto>> GetByCustomerId(int customerId)
 		{
-			return _accounts.Where(a => a.CustomerId == customerId);
+			return await Task.Run(()=> _accounts.Where(a => a.CustomerId == customerId)).ConfigureAwait(false);
 		}
 	}
 }

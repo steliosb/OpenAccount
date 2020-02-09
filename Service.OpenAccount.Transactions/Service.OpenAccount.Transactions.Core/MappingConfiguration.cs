@@ -29,7 +29,10 @@ namespace Service.OpenAccount.Transactions.Core
         {
             var config = new MapperConfiguration(cfg =>
             {
+                //Mapping from TransactionDto to Transaction
                 cfg.CreateMap<TransactionDto, Transaction>();
+
+                //Mapping from Transaction to TransactionDto
                 cfg.CreateMap<Transaction, TransactionDto>();
             });
 

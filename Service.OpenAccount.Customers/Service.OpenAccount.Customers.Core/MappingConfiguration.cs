@@ -29,13 +29,19 @@ namespace Service.OpenAccount.Customers.Core
         {
             var config = new MapperConfiguration(cfg =>
             {
+                //Mapping from Data.Abstractions.Models.Customer to Customer
                 cfg.CreateMap<Data.Abstractions.Models.Customer, Customer>();
+
+                //Mapping from Data.Abstractions.Models.Customer to CustomerDetail and ignore extrea properties
                 cfg.CreateMap<Data.Abstractions.Models.Customer, CustomerDetail>()
                     .ForMember(dest => dest.Accounts, src => src.Ignore())
                     .ForMember(dest => dest.Balance, src => src.Ignore());
+
                 cfg.CreateMap<Customer, Data.Abstractions.Models.Customer>();
 
                 cfg.CreateMap<Integration.Abstractions.Models.Transaction, Transaction>();
+
+                //Mapping from Integration.Abstractions.Models.AccountDetail to AccountDetail and fill transaction list of AccountDetail object
                 cfg.CreateMap<Integration.Abstractions.Models.AccountDetail, AccountDetail>()
                     .ForMember(dest=>dest.Transactions, mp=>mp.MapFrom(src=>src.Transactions.Select(t=>_mapper.Map<Integration.Abstractions.Models.Transaction>(t)).ToList()));
             });

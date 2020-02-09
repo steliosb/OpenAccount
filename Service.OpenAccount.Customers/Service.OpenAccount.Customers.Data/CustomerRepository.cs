@@ -9,7 +9,14 @@ namespace Service.OpenAccount.Customers.Data
 	{
 		public async Task<Customer> GetById(int id)
 		{
-			if (id > 0 && id <= 1000) //we have the first 1000 customers in our DB
+			return await Task.Run(()=>GetByIdAsync(id));
+
+		}
+
+		public Customer GetByIdAsync(int id)
+		{
+			//we have the first 1000 customers in our DB
+			if (id > 0 && id <= 1000)
 			{
 				return new Customer()
 				{
@@ -20,7 +27,7 @@ namespace Service.OpenAccount.Customers.Data
 			}
 			else
 			{
-				return null;
+				return  null;
 			}
 		}
 	}

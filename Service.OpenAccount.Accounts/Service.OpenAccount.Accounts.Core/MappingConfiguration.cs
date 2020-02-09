@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Service.OpenAccount.Accounts.Core.Abstractions.Models;
+using Service.OpenAccount.Accounts.Data.Abstrsactions.Dto;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -28,9 +29,9 @@ namespace Service.OpenAccount.Accounts.Core
         {
             var config = new MapperConfiguration(cfg =>
             {
-                cfg.CreateMap<Data.Abstrsactions.Dto.Account, Account>();
-                cfg.CreateMap<Data.Abstrsactions.Dto.Account, AccountDetail>().ForMember(dest => dest.Transactions, src => src.Ignore());
-                cfg.CreateMap<Account, Data.Abstrsactions.Dto.Account>();
+                cfg.CreateMap<AccountDto, Account>();
+                cfg.CreateMap<AccountDto, AccountDetail>().ForMember(dest => dest.Transactions, src => src.Ignore());
+                cfg.CreateMap<Account, AccountDto>();
 
                 cfg.CreateMap<Integration.Abstractions.Models.Transaction, Transaction>();
                 cfg.CreateMap<Transaction, Integration.Abstractions.Models.Transaction>();

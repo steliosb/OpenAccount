@@ -34,10 +34,12 @@ namespace Service.OpenAccount.Customers.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
 
-                var customerDetail = await _customerManager.GetDetail(customerId).ConfigureAwait(false);
-
+                //Get customer details
+                var customerDetail = await _customerManager.GetDetail(customerId).ConfigureAwait(false);       
+                
                 if (customerDetail == null) return NotFound(new { error = $"Customer {customerId} does not exist" });
 
                 return Ok(customerDetail);
@@ -54,8 +56,10 @@ namespace Service.OpenAccount.Customers.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
 
+                //Get customer
                 var customer = await _customerManager.GetById(customerId).ConfigureAwait(false);
 
                 if (customer == null) return NotFound(new { error= $"Customer {customerId} does not exist" });

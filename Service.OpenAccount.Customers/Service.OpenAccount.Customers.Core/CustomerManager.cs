@@ -26,12 +26,15 @@ namespace Service.OpenAccount.Customers.Core
 		{
 			try
 			{
+				//Get customer from DB
 				var customerDto = await _customerRepository.GetById(customerId).ConfigureAwait(false);
+
+				//Map the customer object from DB to customer core object
 				var customer = _mapper.Map<Customer>(customerDto);
 
 				return customer;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				//TODO: log
 				throw;
@@ -47,21 +50,26 @@ namespace Service.OpenAccount.Customers.Core
 		{
 			try
 			{
+				//Get customer from DB
 				var customerDto = await _customerRepository.GetById(customerId).ConfigureAwait(false);
 
 				if (customerDto == null) return null;
-				
+
+				//Map customer detail object from DB to customer detail core object
 				var customerDetail = _mapper.Map<CustomerDetail>(customerDto);
 
+				//Call account service in order to collect account details by customer id
 				var accountDetailsIntegration = await _accountClient.GetByCustomerId(customerId).ConfigureAwait(false);
 
+	
 				customerDetail.Accounts = _mapper.Map<List<AccountDetail>>(accountDetailsIntegration);
 
+				//Compute the balance of customer(Sum of all transactions amount)
 				customerDetail.Balance = customerDetail.Accounts.Sum(a => a.Transactions.Sum(t => t.Amount));
 
 				return customerDetail;
 			}
-			catch(Exception ex)
+			catch(Exception)
 			{
 				//TODO: log
 				throw;

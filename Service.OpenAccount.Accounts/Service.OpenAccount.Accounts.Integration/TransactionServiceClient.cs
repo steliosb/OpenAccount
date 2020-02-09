@@ -22,6 +22,7 @@ namespace Service.OpenAccount.Accounts.Integration
 		{
 			var request = JsonConvert.SerializeObject(transaction);
 
+			//Post call to transaction service in order to create transaction
 			var response = await _httpClient.PostAsync($"{_config.Endpoint}/create", new StringContent(request, Encoding.UTF8, "application/json")).ConfigureAwait(false);
 
 			HttpContent content = response.Content;
@@ -34,13 +35,14 @@ namespace Service.OpenAccount.Accounts.Integration
 
 			var objResponse = JsonConvert.DeserializeObject<Transaction>(jsonResponse);
 
-			transaction.Id = objResponse.Id;//or map all the fields if necessary 
+			transaction.Id = objResponse.Id;
 		}
 
 		public async Task<IEnumerable<Transaction>> GetByAccountIds(IEnumerable<int> accountIds)
 		{
 			var request = JsonConvert.SerializeObject(accountIds);
 
+			//Post call to transaction service in order get transaction details about customer's accounts
 			var response = await _httpClient.PostAsync($"{_config.Endpoint}/getbyaccountids", new StringContent(request, Encoding.UTF8, "application/json")).ConfigureAwait(false);
 
 			HttpContent content = response.Content;

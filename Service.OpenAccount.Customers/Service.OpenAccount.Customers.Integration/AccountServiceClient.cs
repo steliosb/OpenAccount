@@ -20,7 +20,7 @@ namespace Service.OpenAccount.Customers.Integration
 
 		public async Task<IEnumerable<AccountDetail>> GetByCustomerId(int customerId)
 		{
-
+			//Get call in account service
 			var response = await _httpClient.GetAsync($"{_config.EndPoint}/getdetailbycustomerid/{customerId}").ConfigureAwait(false);
 
 			HttpContent content = response.Content;
@@ -31,6 +31,7 @@ namespace Service.OpenAccount.Customers.Integration
 				throw new Exception($"error in AccountServiceClient {jsonResponse}");
 			}
 
+			//Deserialize object to json
 			var objResponse = JsonConvert.DeserializeObject<List<AccountDetail>>(jsonResponse);
 
 			return objResponse;

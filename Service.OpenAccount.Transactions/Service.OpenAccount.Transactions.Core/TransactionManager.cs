@@ -23,11 +23,16 @@ namespace Service.OpenAccount.Transactions.Core
 		{
 			try
 			{
+				//Map transaction core object to transaction DB object 
 				var transactionDto = _mapper.Map<TransactionDto>(transaction);
+
+				//Call repository in order to create a new transaction for an account
 				await _transactionRepository.Create(transactionDto).ConfigureAwait(false);
+
+				//Map the transaction object from DB to transaction core object
 				_mapper.Map<TransactionDto, Transaction>(transactionDto, transaction);
 			}
-			catch(Exception ex)
+			catch(Exception)
 			{
 				//TODO: log
 				throw;
@@ -38,11 +43,12 @@ namespace Service.OpenAccount.Transactions.Core
 		{
 			try
 			{
+				//Fetch transactions by account ids
 				var transactionDtos = await _transactionRepository.GetTransactionsByAccountIds(accountIds).ConfigureAwait(false);
 				var transactions =_mapper.Map<List<Transaction>>(transactionDtos);
 				return transactions;
 			}
-			catch (Exception ex)
+			catch (Exception)
 			{
 				//TODO: log
 				throw;

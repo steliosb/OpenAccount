@@ -9,17 +9,24 @@ namespace Service.OpenAccount.Transactions.Data
 {
 	public class TransactionRepository : ITransactionRepository
 	{
+		//Simulation of Transaction table in DB
 		public static List<TransactionDto> _transactions = new List<TransactionDto>();
 
 		public async Task<IEnumerable<TransactionDto>> GetTransactionsByAccountIds(IEnumerable<int> accountIds)
 		{
-			return _transactions.Where(t => accountIds.Contains(t.AccountId));
+			//Return all transactions with account id
+			return await Task.Run(()=>_transactions.Where(t => accountIds.Contains(t.AccountId))).ConfigureAwait(false);
 		}
 
 		public async Task Create(TransactionDto transaction)
 		{
-			transaction.Id = _transactions.Count() + 1;
-			_transactions.Add(transaction);
+			//Create transaction id
+			await Task.Run(() => _transactions.Add(new TransactionDto()
+			{
+				Id = _transactions.Count() + 1,
+				AccountId = transaction.AccountId,
+				Amount = transaction.Amount
+			})).ConfigureAwait(false);			
 		}
 	}
 }

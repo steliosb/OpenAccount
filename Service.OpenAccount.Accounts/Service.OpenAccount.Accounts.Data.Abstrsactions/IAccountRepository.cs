@@ -7,8 +7,8 @@ namespace Service.OpenAccount.Accounts.Data.Abstrsactions
 {
 	public interface IAccountRepository
 	{
-		Task Create(Account account);
+		Task Create(AccountDto account);
 
-		Task<IEnumerable<Account>> GetByCustomerId(int customerId);
+		Task<IEnumerable<AccountDto>> GetByCustomerId(int customerId);
 	}
 }

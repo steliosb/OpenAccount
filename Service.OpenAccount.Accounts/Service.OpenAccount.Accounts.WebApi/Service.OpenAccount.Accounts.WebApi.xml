@@ -4,7 +4,11 @@
         <name>Service.OpenAccount.Accounts.WebApi</name>
     </assembly>
     <members>
-        <!-- Badly formed XML comment ignored for member "T:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController" -->
+        <member name="T:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController">
+            <summary>
+            Account controller responsible for new customer's account and transaction creation and fetch accounts details by customer id 
+            </summary>
+        </member>
         <member name="M:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController.Create(Service.OpenAccount.Accounts.WebApi.Models.AccountRequest)">
             <summary>
             Create a new account and transaction if amount is greater than 0 for a customer

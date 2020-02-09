@@ -19,6 +19,7 @@ namespace Service.OpenAccount.Accounts.Integration
 		}
 		public async Task<Customer> GetById(int customerId)
 		{
+			//Get call to customer service in order to take the customer
 			var response = await _httpClient.GetAsync($"{_config.Endpoint}/{customerId}").ConfigureAwait(false);
 
 			HttpContent content = response.Content;

@@ -11,7 +11,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
 {
 
     /// <summary>
-    /// Account controller responsible for new customer's account & transaction creation and fetch accounts details by customer id 
+    /// Account controller responsible for new customer's account and transaction creation and fetch accounts details by customer id 
     /// </summary>
     [Route("api/[controller]")]
     [ApiController]
@@ -38,8 +38,9 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
-
+              
                 var account = new Core.Abstractions.Models.Account()
                 {
                     CustomerId = accountRequest.CustomerId
@@ -66,6 +67,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
 
                 var accountDetail = await _accountManager.GetDetail(customerId).ConfigureAwait(false);

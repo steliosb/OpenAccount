@@ -19,6 +19,7 @@ namespace Service.OpenAccount.Transactions.WebApi.Controllers
     {
         private readonly ITransactionManager _transactionManager;
         private readonly IMapper _mapper;
+
         public TransactionsController(ITransactionManager transactionManager)
         {
             _transactionManager = transactionManager;
@@ -36,15 +37,19 @@ namespace Service.OpenAccount.Transactions.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
                 
+                //Map request to transaction core object in order to call transaction manager
                 var transactionCore = _mapper.Map<Core.Abstractions.Models.Transaction>(transaction);
                 await _transactionManager.Create(transactionCore).ConfigureAwait(false);
+
+                //Map transaction core object to transaction that will be exposed from API
                 _mapper.Map(transactionCore, transaction);
                 
                 return Ok(transaction);
             }
-            catch(Exception ex)
+            catch(Exception ex) 
             {
                 return StatusCode(500, new { error= ex.Message });
             }
@@ -62,9 +67,11 @@ namespace Service.OpenAccount.Transactions.WebApi.Controllers
         {
             try
             {
+                //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
-
                 var transactionsCore = await _transactionManager.GetTransactionsByAccountIds(accountIds).ConfigureAwait(false);
+
+                //Map transactions core list to list of transactions details that will be exposed from API
                 var transactions = _mapper.Map<List<WebApi.Models.Transaction>>(transactionsCore);
 
                 return Ok(transactions);
