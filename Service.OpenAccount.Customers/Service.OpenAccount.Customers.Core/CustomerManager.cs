@@ -38,6 +38,11 @@ namespace Service.OpenAccount.Customers.Core
 			}
 		}
 
+		/// <summary>
+		/// Get customer's detail from customer id
+		/// </summary>
+		/// <param name="customerId"></param>
+		/// <returns></returns>
 		public async Task<CustomerDetail> GetDetail(int customerId)
 		{
 			try

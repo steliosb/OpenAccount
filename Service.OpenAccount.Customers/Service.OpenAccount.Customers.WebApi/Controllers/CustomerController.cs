@@ -19,6 +19,12 @@ namespace Service.OpenAccount.Customers.WebApi.Controllers
             _customerManager = customerManager;
         }
 
+        /// <summary>
+        /// Fetch customer's detail from customer id
+        /// </summary>
+        /// <param name="customerId">Send detail request containing customer id</param>
+        /// <response code="200">Operation suceeded</response>
+        /// <response code="500">Internal server error</response>    
         [HttpGet]
         [Route("Detail/{customerId}")]
         public async Task<IActionResult> Detail(int customerId)

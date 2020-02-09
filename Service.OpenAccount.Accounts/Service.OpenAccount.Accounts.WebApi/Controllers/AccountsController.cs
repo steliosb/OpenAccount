@@ -20,7 +20,15 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
             _accountManager = accountManager;
         }
 
+
+        /// <summary>
+        /// Create a new account for a customer
+        /// </summary>
+        /// <response code="200">Operation suceeded</response>
+        /// <response code="500">Internal server error</response>       
         [HttpPost]
+        [ProducesDefaultResponseType]
+        [ProducesResponseType(StatusCodes.Status200OK)]
         [Route("Create")]
         public async Task<IActionResult> Create(AccountRequest accountRequest)
         {
@@ -42,6 +50,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
                 return StatusCode(500, new { error = ex.Message });
             }
         }
+
 
         [HttpGet]
         [Route("GetDetailByCustomerId/{customerId}")]

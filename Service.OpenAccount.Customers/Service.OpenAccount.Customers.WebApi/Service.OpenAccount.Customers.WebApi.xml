@@ -4,5 +4,13 @@
         <name>Service.OpenAccount.Customers.WebApi</name>
     </assembly>
     <members>
+        <member name="M:Service.OpenAccount.Customers.WebApi.Controllers.CustomerController.Detail(System.Int32)">
+            <summary>
+            Fetch customer's detail from customer id
+            </summary>
+            <param name="customerId">Send detail request containing customer id</param>
+            <response code="200">Operation suceeded</response>
+            <response code="500">Internal server error</response>    
+        </member>
     </members>
 </doc>

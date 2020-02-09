@@ -47,7 +47,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Custome
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Integration.Abstractions", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Integration.Abstractions\Service.OpenAccount.Customers.Integration.Abstractions.csproj", "{8560A400-9668-42A3-BE77-92C53529A4C9}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Service.OpenAccount.Customers.Tests", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Tests\Service.OpenAccount.Customers.Tests.csproj", "{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Service.OpenAccount.Customers.Tests", "Service.OpenAccount.Customers\Service.OpenAccount.Customers.Tests\Service.OpenAccount.Customers.Tests.csproj", "{E7DABFDE-B648-4A04-A1FA-B9D40F550DAB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
