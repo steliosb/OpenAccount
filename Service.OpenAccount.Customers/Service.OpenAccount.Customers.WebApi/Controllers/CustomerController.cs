@@ -8,6 +8,9 @@ using Service.OpenAccount.Customers.Core.Abstractions;
 
 namespace Service.OpenAccount.Customers.WebApi.Controllers
 {
+    /// <summary>
+    /// Customer controller for fetch customer data
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class CustomerController : ControllerBase

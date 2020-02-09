@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Service.OpenAccount.Accounts.WebApi</name>
+    </assembly>
+    <members>
+        <!-- Badly formed XML comment ignored for member "T:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController" -->
+        <member name="M:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController.Create(Service.OpenAccount.Accounts.WebApi.Models.AccountRequest)">
+            <summary>
+            Create a new account and transaction if amount is greater than 0 for a customer
+            </summary>
+            <response code="200">Operation suceeded</response>
+            <response code="500">Internal server error</response>       
+        </member>
+        <member name="M:Service.OpenAccount.Accounts.WebApi.Controllers.AccountsController.GetDetailByCustomerId(System.Int32)">
+            <summary>
+            Get accounts details by customer id  
+            </summary>
+            <param name="customerId"></param>
+            <returns></returns>
+        </member>
+        <member name="T:Service.OpenAccount.Accounts.WebApi.Models.AccountRequest">
+            <summary>
+            Account Request
+            </summary>
+        </member>
+        <member name="P:Service.OpenAccount.Accounts.WebApi.Models.AccountRequest.CustomerId">
+            <summary>
+            Customer Id
+            </summary>
+        </member>
+        <member name="P:Service.OpenAccount.Accounts.WebApi.Models.AccountRequest.initialCredit">
+            <summary>
+            Initial Credit of transaction
+            </summary>
+        </member>
+    </members>
+</doc>

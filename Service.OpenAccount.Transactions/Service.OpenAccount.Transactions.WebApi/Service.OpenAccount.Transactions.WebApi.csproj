@@ -4,6 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DocumentationFile>C:\Code\Service.OpenAccount\Service.OpenAccount.Transactions\Service.OpenAccount.Transactions.WebApi\Service.OpenAccount.Transactions.WebApi.xml</DocumentationFile>
+  </PropertyGroup>
+
   <ItemGroup>
     <None Include="..\..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
@@ -13,6 +17,9 @@
     <PackageReference Include="Microsoft.AspNetCore.Mvc.DataAnnotations" Version="2.2.0" />
     <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.1.1" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.1.1" />
+    <PackageReference Include="Swashbuckle.AspNetCore.Swagger" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="5.0.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -20,6 +27,12 @@
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Core\Service.OpenAccount.Transactions.Core.csproj" />
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Data.Abstarctions\Service.OpenAccount.Transactions.Data.Abstarctions.csproj" />
     <ProjectReference Include="..\Service.OpenAccount.Transactions.Data\Service.OpenAccount.Transactions.Data.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Service.OpenAccount.Transactions.WebApi.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
 
 

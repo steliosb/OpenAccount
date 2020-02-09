@@ -4,6 +4,11 @@
         <name>Service.OpenAccount.Customers.WebApi</name>
     </assembly>
     <members>
+        <member name="T:Service.OpenAccount.Customers.WebApi.Controllers.CustomerController">
+            <summary>
+            Customer controller for fetch customer data
+            </summary>
+        </member>
         <member name="M:Service.OpenAccount.Customers.WebApi.Controllers.CustomerController.Detail(System.Int32)">
             <summary>
             Fetch customer's detail from customer id

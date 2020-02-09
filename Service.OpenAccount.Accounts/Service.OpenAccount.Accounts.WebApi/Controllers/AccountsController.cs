@@ -9,6 +9,10 @@ using Service.OpenAccount.Accounts.WebApi.Models;
 
 namespace Service.OpenAccount.Accounts.WebApi.Controllers
 {
+
+    /// <summary>
+    /// Account controller responsible for new customer's account & transaction creation and fetch accounts details by customer id 
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class AccountsController : ControllerBase
@@ -22,7 +26,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
 
 
         /// <summary>
-        /// Create a new account for a customer
+        /// Create a new account and transaction if amount is greater than 0 for a customer
         /// </summary>
         /// <response code="200">Operation suceeded</response>
         /// <response code="500">Internal server error</response>       
@@ -51,7 +55,11 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
             }
         }
 
-
+        /// <summary>
+        /// Get accounts details by customer id  
+        /// </summary>
+        /// <param name="customerId"></param>
+        /// <returns></returns>
         [HttpGet]
         [Route("GetDetailByCustomerId/{customerId}")]
         public async Task<IActionResult> GetDetailByCustomerId(int customerId)

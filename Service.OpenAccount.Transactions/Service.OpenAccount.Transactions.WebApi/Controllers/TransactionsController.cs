@@ -10,6 +10,9 @@ using Service.OpenAccount.Transactions.WebApi.Models;
 
 namespace Service.OpenAccount.Transactions.WebApi.Controllers
 {
+    /// <summary>
+    /// Transaction controller responsible for transaction creation and fetch transaction details by account id
+    /// </summary>
     [Route("api/[controller]")]
     [ApiController]
     public class TransactionsController : ControllerBase
@@ -22,7 +25,11 @@ namespace Service.OpenAccount.Transactions.WebApi.Controllers
             _mapper = new MappingConfiguration().GetConfigureMapper();
         }
 
-
+        /// <summary>
+        /// Create a new transaction for customer's account
+        /// </summary>
+        /// <param name="transaction"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("Create")]
         public async Task<IActionResult> Create(Transaction transaction)
@@ -44,6 +51,11 @@ namespace Service.OpenAccount.Transactions.WebApi.Controllers
 
         }
 
+        /// <summary>
+        /// Fetch transaction details by a list of customer's account ids
+        /// </summary>
+        /// <param name="accountIds"></param>
+        /// <returns></returns>
         [HttpPost]
         [Route("GetByAccountIds")]
         public async Task<IActionResult> GetByAccountIds(List<int> accountIds)

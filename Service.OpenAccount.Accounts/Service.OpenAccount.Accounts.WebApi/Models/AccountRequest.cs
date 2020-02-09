@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace Service.OpenAccount.Accounts.WebApi.Models
 {
 	/// <summary>
-	/// Create new customer account if initial ammount is not 0 using customer id 
+	/// Account Request
 	/// </summary>
 	public class AccountRequest
 	{
