@@ -24,7 +24,7 @@ namespace Service.OpenAccount.Accounts.Core
 			_mapper = new MappingConfiguration().GetConfigureMapper();
 
 		}
-		public async Task Create(Account account, decimal? initialAmount = null)
+		public async Task Create(Account account, decimal? initialCredit = null)
 		{
 			try
 			{
@@ -36,12 +36,12 @@ namespace Service.OpenAccount.Accounts.Core
 				await _accountRepository.Create(accountDto).ConfigureAwait(false);
 				_mapper.Map(accountDto, account);
 
-				if (initialAmount.HasValue && initialAmount.Value != decimal.Zero)
+				if (initialCredit.HasValue && initialCredit.Value != decimal.Zero)
 				{
 					await _transactionClient.Create(new Integration.Abstractions.Models.Transaction()
 					{
 						AccountId = account.Id,
-						Amount = initialAmount.Value
+						Amount = initialCredit.Value
 					}).ConfigureAwait(false);
 				}
 			}

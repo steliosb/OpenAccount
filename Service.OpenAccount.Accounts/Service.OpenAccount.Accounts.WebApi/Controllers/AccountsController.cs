@@ -41,7 +41,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
                     CustomerId = accountRequest.CustomerId
                 };
 
-                await _accountManager.Create(account, accountRequest.InitialAmount).ConfigureAwait(false);
+                await _accountManager.Create(account, accountRequest.initialCredit).ConfigureAwait(false);
 
                 return Ok(account);
             }

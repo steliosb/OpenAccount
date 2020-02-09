@@ -1,0 +1,41 @@
+version: '3.4'
+
+services:
+  accounts:
+    build:
+      context: .
+      dockerfile: Service.OpenAccount.Accounts/Service.OpenAccount.Accounts.WebApi/Dockerfile
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Release
+    ports: 
+        - "5004:80"
+    depends_on:
+      - transactions
+      - customers
+
+  customers:
+      build:
+        context: .
+        dockerfile: Service.OpenAccount.Customers/Service.OpenAccount.Customers.WebApi/Dockerfile
+      environment: 
+        - ASPNETCORE_ENVIRONMENT=Release
+      ports: 
+          - "5003:80"
+      depends_on:
+        - transactions
+
+  transactions:
+      build:
+        context: .
+        dockerfile: Service.OpenAccount.Transactions/Service.OpenAccount.Transactions.WebApi/Dockerfile
+      environment: 
+          - ASPNETCORE_ENVIRONMENT=Release
+      ports: 
+          - "5002:80"
+
+networks:
+  default:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.31.0.0/16

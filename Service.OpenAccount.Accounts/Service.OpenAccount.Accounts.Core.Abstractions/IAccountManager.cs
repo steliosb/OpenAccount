@@ -7,7 +7,7 @@ namespace Service.OpenAccount.Accounts.Core.Abstractions
 {
 	public interface IAccountManager
 	{
-		Task Create(Account account, decimal? initialAmount = null);
+		Task Create(Account account, decimal? initialCredit = null);
 		Task<IEnumerable<AccountDetail>> GetDetail(int customerId);
 
 	}

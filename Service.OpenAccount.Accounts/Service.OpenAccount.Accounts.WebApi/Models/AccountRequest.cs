@@ -17,8 +17,8 @@ namespace Service.OpenAccount.Accounts.WebApi.Models
 		[Required]
 		public int CustomerId { get; set; }
 		/// <summary>
-		/// Initial Amount of transaction
+		/// Initial Credit of transaction
 		/// </summary>
-		public decimal? InitialAmount { get; set; }
+		public decimal? initialCredit { get; set; }
 	}
 }
