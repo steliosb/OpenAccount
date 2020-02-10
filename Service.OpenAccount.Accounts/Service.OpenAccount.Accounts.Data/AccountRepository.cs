@@ -13,11 +13,8 @@ namespace Service.OpenAccount.Accounts.Data
 
 		public async Task Create(AccountDto account)
 		{
-			await Task.Run(() => _accounts.Add(new AccountDto()
-			{
-				Id = _accounts.Count() + 1,
-				CustomerId = account.CustomerId
-			})).ConfigureAwait(false);
+			account.Id = _accounts.Count() + 1;
+			await Task.Run(() => _accounts.Add(account)).ConfigureAwait(false);
 		}
 
 		public async Task<IEnumerable<AccountDto>> GetByCustomerId(int customerId)

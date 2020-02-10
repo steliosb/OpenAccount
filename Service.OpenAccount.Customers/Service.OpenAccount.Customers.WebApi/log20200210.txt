@@ -1,0 +1,2 @@
+2020-02-10 13:10:05.475 +02:00 [INF] Get customer detail with customer id: 1
+2020-02-10 13:10:05.801 +02:00 [INF] Response from account service call get accounts by customer id  1 responded with [{"transactions":[{"id":1,"accountId":1,"amount":122.0}],"id":1,"customerId":1},{"transactions":[{"id":2,"accountId":2,"amount":122.0}],"id":2,"customerId":1}]

@@ -1,1 +1,13 @@
 2020-02-10 11:48:23.853 +02:00 [ERR] Create  account with request parameters customerId: 0 and initial credit:  error :Customer not found
+2020-02-10 13:02:22.974 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:02:23.717 +02:00 [INF] Response from call transaction service create transaction with account id : 0 and amount: 122 responded with {"id":0,"accountId":0,"amount":122.0}
+2020-02-10 13:02:52.301 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:03:28.048 +02:00 [INF] Response from call transaction service create transaction with account id : 0 and amount: 122 responded with {"id":0,"accountId":0,"amount":122.0}
+2020-02-10 13:04:08.028 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:04:14.932 +02:00 [INF] Response from call transaction service create transaction with account id : 0 and amount: 122 responded with {"id":0,"accountId":0,"amount":122.0}
+2020-02-10 13:04:53.812 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:09:06.104 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:09:06.778 +02:00 [INF] Response from call transaction service create transaction with account id : 0 and amount: 122 responded with {"id":1,"accountId":1,"amount":122.0}
+2020-02-10 13:09:12.131 +02:00 [INF] Response from get customer by id  1 responded with {"id":1,"name":"FirstName-1","surname":"LastName-1"}
+2020-02-10 13:09:12.154 +02:00 [INF] Response from call transaction service create transaction with account id : 0 and amount: 122 responded with {"id":2,"accountId":2,"amount":122.0}
+2020-02-10 13:10:05.782 +02:00 [INF] Response from call transaction service get transaction with account ids 1,2 responded with [{"id":1,"accountId":1,"amount":122.0},{"id":2,"accountId":2,"amount":122.0}]

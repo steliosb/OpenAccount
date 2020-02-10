@@ -22,7 +22,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Release"
       },
-      "applicationUrl": "https://0.0.0.0:5003;http://0.0.0.0:5004"
+      "applicationUrl": "https://0.0.0.0:5000;http://0.0.0.0:5004"
     }
   }
 }

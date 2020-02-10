@@ -21,12 +21,8 @@ namespace Service.OpenAccount.Transactions.Data
 		public async Task Create(TransactionDto transaction)
 		{
 			//Create transaction id
-			await Task.Run(() => _transactions.Add(new TransactionDto()
-			{
-				Id = _transactions.Count() + 1,
-				AccountId = transaction.AccountId,
-				Amount = transaction.Amount
-			})).ConfigureAwait(false);			
+			transaction.Id = _transactions.Count() + 1;
+			await Task.Run(() => _transactions.Add(transaction)).ConfigureAwait(false);		
 		}
 	}
 }
