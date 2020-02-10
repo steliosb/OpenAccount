@@ -41,6 +41,19 @@ git clone https://github.com/steliosb/Service.OpenAccount.git
  - Service.OpenAccount.Transactions.WebApi
  4. Start project on Debug mode
  
+## Test APIs Functionality
+1.Accept users information
+ - http://localhost:5002/api/accounts and json request
+ ```bash
+  "customerid" : 1,
+  "initialCredit": 100
+ ```
+ 2. User information
+ - http://localhost:5004/api/accounts and json request
+ ```bash
+  "customerid" : 1
+ ```
+ 
 ## Usage
 A useful API specification can be found via swagger tool here: 
  - [Service.Customers API](http://localhost:5004/swagger)
