@@ -10,6 +10,8 @@ Account service is responsible for customer's account details exposed an API
 - Service.Transaction
 Transaction service is responsible for customer's transaction details exposed an API
 
+> **Note:** *For project purposes static lists(1000 existance customers,accounts,transactions) have been used simulating DB layer*
+
 ## Stack of services
 - .NET Core 3.1.
 - ASP.NET Web-API
