@@ -45,13 +45,13 @@ Transaction service is responsible for customer's transaction details exposed an
 Test of functionality through POSTMAN CURL calls
 
 1. Accept users information
-  - http://localhost:5002/api/accounts/create and json request
+  - http://localhost:5004/api/accounts/create and json request
     ```bash
     "customerid" : 1,
     "initialCredit": 100
     ```
 2. User information
-  - http://localhost:5004/api/customer/detail and json request
+  - http://localhost:5003/api/customer/detail and json request
     ```bash
      "customerid" : 1
     ```
