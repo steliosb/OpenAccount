@@ -1,0 +1,9 @@
+#ignore /artifacts /docs /.git /.vs etc...
+
+artifacts/*
+docs/*
+.git/*
+.vs/*
+
+!Readme.md
+

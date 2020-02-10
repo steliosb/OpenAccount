@@ -6,6 +6,7 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DocumentationFile>C:\Code\Service.OpenAccount\Service.OpenAccount.Transactions\Service.OpenAccount.Transactions.WebApi\Service.OpenAccount.Transactions.WebApi.xml</DocumentationFile>
+    <NoWarn>1701;1702;1591</NoWarn>
   </PropertyGroup>
 
   <ItemGroup>
