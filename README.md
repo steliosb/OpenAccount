@@ -25,7 +25,7 @@ Transaction service is responsible for customer's transaction details exposed an
 3. Install Docker platform
   - Windows users from [docker windows](https://www.docker.com/products/docker-desktop)
   - Ubuntu users from [community](https://docs.docker.com/install/linux/docker-ce/ubuntu/) or [enterprise](https://docs.docker.com/ee/docker-ee/ubuntu/)
-4. Run the `docker-compose` file (using PowerShell) that resides in the top-level directory of the solution.
+4. Run the `docker-compose up --build -d` file (using PowerShell) that resides in the top-level directory of the solution.
 
 > **Note:** *Docker-compose will run 3 services on release enviroment*
 
