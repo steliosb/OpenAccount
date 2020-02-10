@@ -1,0 +1,1 @@
+2020-02-10 11:48:23.853 +02:00 [ERR] Create  account with request parameters customerId: 0 and initial credit:  error :Customer not found

@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Serilog;
 using Service.OpenAccount.Accounts.Core.Abstractions;
 using Service.OpenAccount.Accounts.Core.Abstractions.Models;
 using Service.OpenAccount.Accounts.Data.Abstrsactions;
@@ -51,9 +52,9 @@ namespace Service.OpenAccount.Accounts.Core
 					}).ConfigureAwait(false);
 				}
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				//TODO: log
+				Log.Error($"Create  account with request parameters customerId: {account.CustomerId} and initial credit: {initialCredit.Value} error :{ex.Message}");
 				throw;
 			}
 		}
@@ -77,9 +78,9 @@ namespace Service.OpenAccount.Accounts.Core
 
 				return accountDetails;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				//TODO: log
+				Log.Error($"Get detail by customerId: {customerId} error :{ex.Message}");
 				throw;
 			}
 		}

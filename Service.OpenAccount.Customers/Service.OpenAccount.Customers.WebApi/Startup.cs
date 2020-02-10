@@ -12,6 +12,7 @@ using Service.OpenAccount.Customers.Integration;
 using Service.OpenAccount.Customers.Integration.Abstractions;
 using System;
 using System.IO;
+using Serilog;
 
 namespace Service.OpenAccount.Customers.WebApi
 {

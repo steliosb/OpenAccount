@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Serilog;
 using Service.OpenAccount.Transactions.Core.Abstractions;
 using Service.OpenAccount.Transactions.Core.Abstractions.Models;
 using Service.OpenAccount.Transactions.Data.Abstarctions;
@@ -32,9 +33,9 @@ namespace Service.OpenAccount.Transactions.Core
 				//Map the transaction object from DB to transaction core object
 				_mapper.Map<TransactionDto, Transaction>(transactionDto, transaction);
 			}
-			catch(Exception)
+			catch(Exception ex)
 			{
-				//TODO: log
+				Log.Error($"Create transaction with request account id: {transaction.AccountId} and amount: {transaction.Amount} error :{ex.Message}");
 				throw;
 			}
 		}
@@ -49,8 +50,7 @@ namespace Service.OpenAccount.Transactions.Core
 				return transactions;
 			}
 			catch (Exception)
-			{
-				//TODO: log
+			{				
 				throw;
 			}
 		}

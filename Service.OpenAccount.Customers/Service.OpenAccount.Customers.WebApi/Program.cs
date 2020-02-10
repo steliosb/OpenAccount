@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using Serilog;
 
 namespace Service.OpenAccount.Customers.WebApi
 {
@@ -13,6 +14,10 @@ namespace Service.OpenAccount.Customers.WebApi
 	{
 		public static void Main(string[] args)
 		{
+			Log.Logger = new LoggerConfiguration()
+				.Enrich.FromLogContext()
+				.WriteTo.File("log.txt", rollingInterval: RollingInterval.Day)
+				.CreateLogger();
 			CreateHostBuilder(args).Build().Run();
 		}
 

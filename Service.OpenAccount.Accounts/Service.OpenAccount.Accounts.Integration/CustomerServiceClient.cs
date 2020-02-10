@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Serilog;
 using Service.OpenAccount.Accounts.Integration.Abstractions;
 using Service.OpenAccount.Accounts.Integration.Abstractions.Models;
 using System;
@@ -30,6 +31,8 @@ namespace Service.OpenAccount.Accounts.Integration
 				if (response.StatusCode == System.Net.HttpStatusCode.NotFound) return null;
 				throw new Exception($"error in CustomerServiceClient {jsonResponse}");
 			}
+
+			Log.Information($"Response from get customer by id  {customerId} responded with {jsonResponse}");
 
 			var objResponse = JsonConvert.DeserializeObject<Customer>(jsonResponse);
 

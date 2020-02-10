@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Serilog;
 using Service.OpenAccount.Customers.Core.Abstractions;
 
 namespace Service.OpenAccount.Customers.WebApi.Controllers
@@ -34,6 +35,8 @@ namespace Service.OpenAccount.Customers.WebApi.Controllers
         {
             try
             {
+                Log.Information($"Get customer detail with customer id: {customerId}");
+
                 //Request validation
                 if (ModelState.IsValid == false) return BadRequest(ModelState);
 

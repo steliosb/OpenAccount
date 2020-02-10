@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Serilog;
 using Service.OpenAccount.Customers.Integration.Abstractions;
 using Service.OpenAccount.Customers.Integration.Abstractions.Models;
 using System;
@@ -30,6 +31,8 @@ namespace Service.OpenAccount.Customers.Integration
 			{
 				throw new Exception($"error in AccountServiceClient {jsonResponse}");
 			}
+
+			Log.Information($"Response from account service call get accounts by customer id  {customerId} responded with {jsonResponse}");
 
 			//Deserialize object to json
 			var objResponse = JsonConvert.DeserializeObject<List<AccountDetail>>(jsonResponse);

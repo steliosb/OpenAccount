@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Serilog;
 using Service.OpenAccount.Customers.Core.Abstractions;
 using Service.OpenAccount.Customers.Core.Abstractions.Models;
 using Service.OpenAccount.Customers.Data.Abstractions;
@@ -34,9 +35,9 @@ namespace Service.OpenAccount.Customers.Core
 
 				return customer;
 			}
-			catch (Exception)
+			catch (Exception ex)
 			{
-				//TODO: log
+				Log.Error($"Get customer with id: {customerId} error message: {ex.Message}");
 				throw;
 			}
 		}
@@ -69,9 +70,9 @@ namespace Service.OpenAccount.Customers.Core
 
 				return customerDetail;
 			}
-			catch(Exception)
+			catch(Exception ex)
 			{
-				//TODO: log
+				Log.Error($"Get customer's account details with customer id: {customerId} error message: {ex.Message}");
 				throw;
 			}
 		}

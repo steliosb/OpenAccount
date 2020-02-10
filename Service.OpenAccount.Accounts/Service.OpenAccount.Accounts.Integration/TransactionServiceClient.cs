@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using Serilog;
 using Service.OpenAccount.Accounts.Integration.Abstractions;
 using Service.OpenAccount.Accounts.Integration.Abstractions.Models;
 using System;
@@ -33,6 +34,8 @@ namespace Service.OpenAccount.Accounts.Integration
 				throw new Exception($"error in TransactionServiceClient {jsonResponse}");
 			}
 
+			Log.Information($"Response from call transaction service create transaction with account id : {transaction.Id} and amount: {transaction.Amount} responded with {jsonResponse}");
+
 			var objResponse = JsonConvert.DeserializeObject<Transaction>(jsonResponse);
 
 			transaction.Id = objResponse.Id;
@@ -52,6 +55,8 @@ namespace Service.OpenAccount.Accounts.Integration
 			{
 				throw new Exception($"error in TransactionServiceClient {jsonResponse}");
 			}
+
+			Log.Information($"Response from call transaction service get transaction with account id responded with {jsonResponse}");
 
 			var objResponse = JsonConvert.DeserializeObject<List<Transaction>>(jsonResponse);
 

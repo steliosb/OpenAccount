@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -51,7 +49,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
                 return Ok(account);
             }
             catch (Exception ex)
-            {
+            {               
                 return StatusCode(500, new { error = ex.Message });
             }
         }
@@ -75,7 +73,7 @@ namespace Service.OpenAccount.Accounts.WebApi.Controllers
                 return Ok(accountDetail);
             }
             catch (Exception ex)
-            {
+            {             
                 return StatusCode(500, new { error = ex.Message });
             }
         }
