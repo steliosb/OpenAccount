@@ -13,7 +13,7 @@ Transaction service is responsible for customer's transaction details exposed an
 ## Stack of services
 - .NET Core 3.1.
 - ASP.NET Web-API
-- Mailkit (cross-platform .NET library for IMAP)
+- Serilog for logging
 
 ## Installation via Docker compose
 
