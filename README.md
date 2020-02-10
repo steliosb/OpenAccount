@@ -3,11 +3,11 @@
 Open Account v1 is a repo that consists of 3 services which communicate each other in order to open a new account for a customer who execute a transaction with specific amount.
 
 ## Micro Services
--Service.Customer
+- Service.Customer
 Customer service is responsible for customer data and functionality exposed an API
--Service.Account
+- Service.Account
 Account service is responsible for customer's account details exposed an API
--Service.Transaction
+- Service.Transaction
 Transaction service is responsible for customer's transaction details exposed an API
 
 ## Stack of services
@@ -36,19 +36,15 @@ git clone https://github.com/steliosb/Service.OpenAccount.git
 git clone https://github.com/steliosb/Service.OpenAccount.git
 ```
  3. From solution select multiple startup projects in order to run API
- -Service.OpenAccount.Accounts.WebApi
- -Service.OpenAccount.Cusotmers.WebApi
- -Service.OpenAccount.Transactions.WebApi
+ - Service.OpenAccount.Accounts.WebApi
+ - Service.OpenAccount.Cusotmers.WebApi
+ - Service.OpenAccount.Transactions.WebApi
  4. Start project on Debug mode
  
 ## Usage
-A useful API specification can be found via swagger tool here:
-
-Service.Customer
+A useful API specification can be found via swagger tool here: 
  - [Service.Customers API](http://localhost:5004/swagger)
- Service.Account
  - [Service.Accounts API](http://localhost:5002/swagger)
- Service.Transaction
  - [Service.Transactions API](http://localhost:5000/swagger)
 
 ## Support
