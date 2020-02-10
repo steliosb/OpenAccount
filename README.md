@@ -10,7 +10,7 @@ Open Account v1 is a service that can be used to open a new account for a custom
 ## Installation
 
  1. Install [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) SDK on your local machine
- 2. Download the repo through [gitlab](https://github.com/steliosb/Service.OpenAccount) or simply
+ 2. Download the repo through [github](https://github.com/steliosb/Service.OpenAccount) or simply
 ```bash
 git clone https://github.com/steliosb/Service.OpenAccount.git
 ```
