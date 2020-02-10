@@ -41,6 +41,9 @@ Transaction service is responsible for customer's transaction details exposed an
 4. Start project on Debug mode
  
 ## Test APIs Functionality
+
+Test of functionality through POSTMAN CURL calls
+
 1. Accept users information
   - http://localhost:5002/api/accounts/create and json request
     ```bash
