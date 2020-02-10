@@ -61,6 +61,9 @@ A useful API specification can be found via swagger tool here:
  - [Service.Transactions API](http://localhost:5000/swagger)
 > **Note:** *APIs specifications will be accessible after project running*
 
+## Services Diagram
+![Open Account diagram](Service.OpenAccount.Diagram.png)
+
 ## Support
 sbalampanis@gmail.com
 
