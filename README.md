@@ -17,15 +17,14 @@ Transaction service is responsible for customer's transaction details exposed an
 
 ## Installation via Docker compose
 
-1. Install [.NET Core 3.1](https://dotnet.microsoft.com/download/dotnet-core/3.1) SDK on your local machine
-2. Download the repo through [github](https://github.com/steliosb/Service.OpenAccount) or simply
+1. Download the repo through [github](https://github.com/steliosb/Service.OpenAccount) or simply
    ```bash
     git clone https://github.com/steliosb/Service.OpenAccount.git
    ```
-3. Install Docker platform
+2. Install Docker platform
   - Windows users from [docker windows](https://www.docker.com/products/docker-desktop)
   - Ubuntu users from [community](https://docs.docker.com/install/linux/docker-ce/ubuntu/) or [enterprise](https://docs.docker.com/ee/docker-ee/ubuntu/)
-4. Run the `docker-compose up --build -d` file (using PowerShell) that resides in the top-level directory of the solution.
+3. Run the `docker-compose up --build -d` file (using PowerShell) that resides in the top-level directory of the solution.
 
 > **Note:** *Docker-compose will run 3 services on release enviroment*
 
