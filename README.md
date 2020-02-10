@@ -46,6 +46,7 @@ A useful API specification can be found via swagger tool here:
  - [Service.Customers API](http://localhost:5004/swagger)
  - [Service.Accounts API](http://localhost:5002/swagger)
  - [Service.Transactions API](http://localhost:5000/swagger)
+> **Note:** *APIs specifications will be accessible after project running*
 
 ## Support
 sbalampanis@gmail.com
