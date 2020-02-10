@@ -1,4 +1,4 @@
-# Service.OpenAccount
+# Open Customer Account
 
 Open Account v1 is a repo that consists of 3 services which communicate each other in order to open a new account for a customer who execute a transaction with specific amount.
 
