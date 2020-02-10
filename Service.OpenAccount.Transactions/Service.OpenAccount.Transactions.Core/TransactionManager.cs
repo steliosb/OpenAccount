@@ -49,8 +49,9 @@ namespace Service.OpenAccount.Transactions.Core
 				var transactions =_mapper.Map<List<Transaction>>(transactionDtos);
 				return transactions;
 			}
-			catch (Exception)
-			{				
+			catch (Exception ex)
+			{
+				Log.Error($"Response from call transaction service get transaction with account ids {String.Join(",", accountIds)} responded with error: {ex.Message}");
 				throw;
 			}
 		}

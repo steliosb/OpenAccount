@@ -56,7 +56,7 @@ namespace Service.OpenAccount.Accounts.Integration
 				throw new Exception($"error in TransactionServiceClient {jsonResponse}");
 			}
 
-			Log.Information($"Response from call transaction service get transaction with account id responded with {jsonResponse}");
+			Log.Information($"Response from call transaction service get transaction with account ids {String.Join(",",accountIds)} responded with {jsonResponse}");
 
 			var objResponse = JsonConvert.DeserializeObject<List<Transaction>>(jsonResponse);
 
