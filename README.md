@@ -45,16 +45,13 @@ Transaction service is responsible for customer's transaction details exposed an
 Test of functionality through POSTMAN CURL calls
 
 1. Accept users information
-  - http://localhost:5004/api/accounts/create and json request
+  - POST http://localhost:5004/api/accounts/create and json request on body
     ```bash
     "customerid" : 1,
     "initialCredit": 100
     ```
 2. User information
-  - http://localhost:5003/api/customer/detail and json request
-    ```bash
-     "customerid" : 1
-    ```
+  - GET http://localhost:5003/api/customer/detail/{customerid}
  
 ## Usage
 A useful API specification can be found via swagger tool here: 
